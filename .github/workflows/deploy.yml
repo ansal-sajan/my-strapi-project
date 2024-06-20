@@ -44,6 +44,7 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             cd /home/ubuntu/my-strapi-project/build
+            rm -rf ./*
             tar -xzf /tmp/my-strapi-project.tgz  # Extract the uploaded tarball
             npm ci  # Or yarn install (if needed on the server)
             pm2 restart strapi-app || pm2 start npm --name "strapi-app" -- run start  # Restart or start the app
