@@ -43,8 +43,12 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            nvm install 18 # Install Node.js v18
-            nvm use 18
+            # Load nvm
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
+
+            nvm install 18 
+            nvm use 18 
             cd /home/ubuntu/my-strapi-project/build
             rm -rf ./*
             tar -xzf /tmp/my-strapi-project.tgz  # Extract the uploaded tarball
