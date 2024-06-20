@@ -44,7 +44,6 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           script: |
             cd ${{ secrets.REMOTE_APP_DIR }}
-            rm -rf ./*  # Clean old files (optional)
             tar -xzf /tmp/my-strapi-project.tgz  # Extract the uploaded tarball
             npm ci  # Or yarn install (if needed on the server)
             pm2 restart strapi-app || pm2 start npm --name "strapi-app" -- run start  # Restart or start the app
