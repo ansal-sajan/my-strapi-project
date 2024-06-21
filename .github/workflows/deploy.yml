@@ -49,7 +49,7 @@ jobs:
 
             nvm install 18 
             nvm use 18
-            cd cd /home/ubuntu/my-strapi-project/
+            cd /home/ubuntu/my-strapi-project/
             git pull
             cd /home/ubuntu/my-strapi-project/build
             rm -rf ./*
