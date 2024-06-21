@@ -48,7 +48,9 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 
             nvm install 18 
-            nvm use 18 
+            nvm use 18
+            cd cd /home/ubuntu/my-strapi-project/
+            git pull
             cd /home/ubuntu/my-strapi-project/build
             rm -rf ./*
             tar -xzf /tmp/my-strapi-project.tgz  # Extract the uploaded tarball
